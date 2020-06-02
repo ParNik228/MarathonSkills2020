@@ -62,6 +62,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -197,6 +199,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Регистрация";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -259,6 +262,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(629, 141);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
@@ -275,6 +279,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox7.Location = new System.Drawing.Point(445, 261);
             this.textBox7.Name = "textBox7";
@@ -300,6 +305,7 @@
             this.button4.TabIndex = 29;
             this.button4.Text = "Просмотр";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label12
             // 
@@ -326,9 +332,8 @@
             this.comboBox1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский",
-            "Свой"});
+            "Male",
+            "Female"});
             this.comboBox1.Location = new System.Drawing.Point(216, 332);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(162, 31);
@@ -338,12 +343,6 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Russia",
-            "USA",
-            "UK",
-            "Germany",
-            "France"});
             this.comboBox2.Location = new System.Drawing.Point(559, 332);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(154, 31);
@@ -422,6 +421,10 @@
             this.label18.TabIndex = 40;
             this.label18.Text = "Фамилия";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,12 +501,13 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

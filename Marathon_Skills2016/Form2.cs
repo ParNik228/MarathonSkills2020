@@ -21,8 +21,9 @@ namespace Marathon_Skills2016
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ActiveForm.Hide();
             AuthorizForm af = new AuthorizForm();
-            af.Show();
+            af.ShowDialog();
             this.Close();
         }
 
@@ -51,14 +52,18 @@ namespace Marathon_Skills2016
 
         private void button3_Click(object sender, EventArgs e)
         {
+            ActiveForm.Hide();
             RegForm rf = new RegForm();
-            rf.Show();
+            rf.ShowDialog();
             this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            ActiveForm.Hide();
+            AuthorizForm af = new AuthorizForm();
+            af.ShowDialog();
+            this.Close();
         }
     }
 }

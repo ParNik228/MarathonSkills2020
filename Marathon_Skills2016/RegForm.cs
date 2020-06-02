@@ -15,6 +15,9 @@ namespace Marathon_Skills2016
         public RegForm()
         {
             InitializeComponent();
+            RegForm rf = this;
+            SqlConnClass scc = new SqlConnClass();
+            scc.RegFormLoad(rf);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -70,6 +73,29 @@ namespace Marathon_Skills2016
             }
             else
                 label18.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = openFileDialog1.FileName;
+            // читаем файл в строку
+            //string fileText = System.IO.File.ReadAllText(filename);
+            pictureBox1.Load(filename);
+            textBox7.Text = filename;
+            label10.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

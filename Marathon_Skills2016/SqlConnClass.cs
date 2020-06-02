@@ -11,6 +11,69 @@ namespace Marathon_Skills2016
 {
    public class SqlConnClass
     {
+        public void RegFormLoad(RegForm rf)
+        {
+            string connStr = "server=localhost;user=root;database=pafenov;password=";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+            string sql = "SELECT CountryName FROM country";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                rf.comboBox2.Items.Add(reader[0].ToString());
+
+            }
+            reader.Close();
+            conn.Close();
+
+        }
+        public void RegRunnrAdd(string email, string firstname,string lastname,string password,string gender,DateTime dateBirth, string countryName)
+        {
+            string connStr = "server=localhost;user=root;database=pafenov;password=";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+            string sql = "SELECT CountryCode FROM country WHERE CountryName = '"+countryName+"'";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            string countCode = command.ExecuteScalar().ToString();
+            // MySqlDataReader reader = command.ExecuteReader();
+            string sql1 = "INSERT INTO user(Email,Password,FirstName,LastName,RoleId) VALUES('" + email + "', '" + password + "', '" + firstname + "', '" + lastname + "', 'R')";
+            string sql2 = "INSERT INTO runner(Email,Gender,DateOfBirth,CountryCode) VALUES('" + email + "', '" + gender + "', '" + dateBirth + "', '" + countCode + "')";
+           command = new MySqlCommand(sql1, conn);
+            command = new MySqlCommand(sql2, conn);
+            // reader.Close();
+            conn.Close();
+        }
+        public void RegFormGender()
+        {
+
+        }
+        public void SponsorAddRec(SponsorForm sf, string str,string name,string sum)
+        {
+            string connStr = "server=localhost;user=root;database=pafenov;password=";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+            string sql = "SELECT RegistrationId FROM registration WHERE RunnerId = "+str;
+           
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            string regid = "";
+
+            while (reader.Read())
+            {
+
+                regid = reader[0].ToString();
+
+            }
+            string sql1 = "INSERT INTO sponsorship(SponsorName,RegistrationId,Amount) VALUES('"+name+"', '"+regid+"', '"+sum+"')";
+            reader.Close();
+            command = new MySqlCommand(sql1, conn);
+            command.ExecuteNonQuery();
+            
+            conn.Close();
+        }
         public string Connection()
         {
             string connStr = "server=localhost;user=root;database=pafenov;password=";

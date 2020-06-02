@@ -241,6 +241,14 @@ namespace Marathon_Skills2016
             }
             else
             {
+                string str;
+                string[] str1;
+                str = comboBox1.Text;
+                str1 = str.Split(' ');
+                SqlConnClass scc = new SqlConnClass();
+                SponsorForm sf = this;
+                scc.SponsorAddRec(sf, str1[0],textBox1.Text,textBox2.Text);
+                //scc.CharityForRunner(sf, str1[0]);
                 ActiveForm.Hide();
                 SponsConfirm sc = new SponsConfirm(comboBox1.Text,label20.Text,label19.Text);
                 sc.ShowDialog();
@@ -267,6 +275,11 @@ namespace Marathon_Skills2016
         {
             TimeSpan TimeRemaining = voteTime - DateTime.Now;
             label21.Text = TimeRemaining.Days + " дней " + TimeRemaining.Hours + " часов " + TimeRemaining.Minutes + " минут " + TimeRemaining.Seconds + " секунд";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
