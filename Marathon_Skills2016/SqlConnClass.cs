@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Marathon_Skills2016
             conn.Close();
 
         }
-        public void RegRunnrAdd(string email, string firstname,string lastname,string password,string gender,DateTime dateBirth, string countryName)
+        public void RegRunnrAdd(string email, string firstname,string lastname,string password,string gender,string dateBirth, string countryName,string photo)
         {
             string connStr = "server=localhost;user=root;database=pafenov;password=";
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -40,9 +41,12 @@ namespace Marathon_Skills2016
             string countCode = command.ExecuteScalar().ToString();
             // MySqlDataReader reader = command.ExecuteReader();
             string sql1 = "INSERT INTO user(Email,Password,FirstName,LastName,RoleId) VALUES('" + email + "', '" + password + "', '" + firstname + "', '" + lastname + "', 'R')";
-            string sql2 = "INSERT INTO runner(Email,Gender,DateOfBirth,CountryCode) VALUES('" + email + "', '" + gender + "', '" + dateBirth + "', '" + countCode + "')";
-           command = new MySqlCommand(sql1, conn);
+            string sql2 = "INSERT INTO runner(Email,Gender,DateOfBirth,RunnerPhoto,CountryCode) VALUES('" + email + "', '" + gender + "', '" + dateBirth + "', '"+photo+"', '" + countCode + "')";
+            command = new MySqlCommand(sql1, conn);
+            command.ExecuteNonQuery();
             command = new MySqlCommand(sql2, conn);
+            command.ExecuteNonQuery();
+
             // reader.Close();
             conn.Close();
         }
