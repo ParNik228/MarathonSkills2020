@@ -12,15 +12,29 @@ namespace Marathon_Skills2016
 {
     public partial class RunnerMenu : Form
     {
-        public RunnerMenu()
+        static DateTime GetStartTime()
+        {
+            SqlConnClass scc = new SqlConnClass();
+            string date = scc.Connection();
+            return Convert.ToDateTime(date);
+        }
+        DateTime voteTime = GetStartTime();
+        Timer tm = new Timer();
+        int runnerId;
+        public RunnerMenu(int id)
         {
             InitializeComponent();
+            tm.Tick += timer1_Tick;
+            tm.Interval = 1000;
+            tm.Enabled = true;
+            tm.Start();
+            runnerId = id;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            RegEventForm reg = new RegEventForm();
+            RegEventForm reg = new RegEventForm(runnerId);
             reg.ShowDialog();
             Close();
         }
@@ -36,7 +50,7 @@ namespace Marathon_Skills2016
         private void button4_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            EditProfileForm epf = new EditProfileForm();
+            EditProfileForm epf = new EditProfileForm(runnerId);
             epf.ShowDialog();
             Close();
         }
@@ -44,7 +58,7 @@ namespace Marathon_Skills2016
         private void button5_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            MyResForm mrf = new MyResForm();
+            MyResForm mrf = new MyResForm(runnerId);
             mrf.ShowDialog();
             Close();
         }
@@ -61,6 +75,12 @@ namespace Marathon_Skills2016
         {
 
             MessageBox.Show("Для получения дополнительной информации \nпожалуйста свяжитесь с координаторами\n\nТелефон: +55 11 9988 7766\nEmail: dean.pinilla@gmail.com\n\nvernon.ankeny@nster.g\nw.bubash@manda.com", "Контакты");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan TimeRemaining = voteTime - DateTime.Now;
+            label21.Text = TimeRemaining.Days + " дней " + TimeRemaining.Hours + " часов " + TimeRemaining.Minutes + " минут до старта марафона!";
         }
     }
 }

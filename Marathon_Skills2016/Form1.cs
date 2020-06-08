@@ -79,7 +79,7 @@ namespace Marathon_Skills2016
         private void timer2_Tick(object sender, EventArgs e)
         {
             TimeSpan TimeRemaining = voteTime - DateTime.Now;
-            label4.Text = TimeRemaining.Days + " дней " + TimeRemaining.Hours + " часов " + TimeRemaining.Minutes + " минут " + TimeRemaining.Seconds + " секунд";
+            label4.Text = TimeRemaining.Days + " дней " + TimeRemaining.Hours + " часов " + TimeRemaining.Minutes + " минут до старта марафона!";
         }
     }
 }

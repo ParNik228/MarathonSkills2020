@@ -70,6 +70,18 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditCharity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditCharity.Designer.cs">
+      <DependentUpon>AddEditCharity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewUser.Designer.cs">
+      <DependentUpon>AddNewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,18 @@
     <Compile Include="BMICalc.Designer.cs">
       <DependentUpon>BMICalc.cs</DependentUpon>
     </Compile>
+    <Compile Include="BMRClac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BMRClac.Designer.cs">
+      <DependentUpon>BMRClac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CertificatePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CertificatePreview.Designer.cs">
+      <DependentUpon>CertificatePreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoordMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +123,12 @@
     </Compile>
     <Compile Include="EditProfileForm.Designer.cs">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -112,6 +142,24 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportVolonteers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportVolonteers.Designer.cs">
+      <DependentUpon>ImportVolonteers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventar.Designer.cs">
+      <DependentUpon>Inventar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventar2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventar2.Designer.cs">
+      <DependentUpon>Inventar2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListOfChar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +171,12 @@
     </Compile>
     <Compile Include="LongMarathonForm.Designer.cs">
       <DependentUpon>LongMarathonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCharities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCharities.Designer.cs">
+      <DependentUpon>ManageCharities.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageForm.cs">
       <SubType>Form</SubType>
@@ -211,8 +265,26 @@
       <DependentUpon>SponsorVievForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlConnClass.cs" />
+    <Compile Include="UserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VilonteerManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VilonteerManagement.Designer.cs">
+      <DependentUpon>VilonteerManagement.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditCharity.resx">
+      <DependentUpon>AddEditCharity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewUser.resx">
+      <DependentUpon>AddNewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenuForm.resx">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
@@ -223,11 +295,20 @@
     <EmbeddedResource Include="BMICalc.resx">
       <DependentUpon>BMICalc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BMRClac.resx">
+      <DependentUpon>BMRClac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CertificatePreview.resx">
+      <DependentUpon>CertificatePreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CoordMenuForm.resx">
       <DependentUpon>CoordMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProfileForm.resx">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -235,11 +316,23 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportVolonteers.resx">
+      <DependentUpon>ImportVolonteers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventar.resx">
+      <DependentUpon>Inventar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventar2.resx">
+      <DependentUpon>Inventar2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListOfChar.resx">
       <DependentUpon>ListOfChar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LongMarathonForm.resx">
       <DependentUpon>LongMarathonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCharities.resx">
+      <DependentUpon>ManageCharities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
@@ -292,6 +385,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SponsorVievForm.resx">
       <DependentUpon>SponsorVievForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VilonteerManagement.resx">
+      <DependentUpon>VilonteerManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

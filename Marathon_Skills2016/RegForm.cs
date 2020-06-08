@@ -14,9 +14,22 @@ namespace Marathon_Skills2016
 {
     public partial class RegForm : Form
     {
+        static DateTime GetStartTime()
+        {
+            SqlConnClass scc = new SqlConnClass();
+            string date = scc.Connection();
+            return Convert.ToDateTime(date);
+        }
+        DateTime voteTime = GetStartTime();
+        Timer tm = new Timer();
+        
         public RegForm()
         {
             InitializeComponent();
+            tm.Tick += timer1_Tick;
+            tm.Interval = 1000;
+            tm.Enabled = true;
+            tm.Start();
             RegForm rf = this;
             SqlConnClass scc = new SqlConnClass();
             scc.RegFormLoad(rf);
@@ -149,7 +162,8 @@ namespace Marathon_Skills2016
                         string dt = dateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm:ss");
                         scc.RegRunnrAdd(textBox1.Text, textBox4.Text, textBox5.Text, textBox2.Text, comboBox1.Text, dt, comboBox2.Text,textBox7.Text);
                         ActiveForm.Hide();
-                        RegEventForm rf = new RegEventForm();
+                        int id = scc.GetRuddenrId(textBox1.Text);
+                        RegEventForm rf = new RegEventForm(id);
                         rf.ShowDialog();
                         Close();
                         }
@@ -176,6 +190,12 @@ namespace Marathon_Skills2016
             }
                
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan TimeRemaining = voteTime - DateTime.Now;
+            label19.Text = TimeRemaining.Days + " дней " + TimeRemaining.Hours + " часов " + TimeRemaining.Minutes + " минут до старта марафона!";
         }
     }
 }
